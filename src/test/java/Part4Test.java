@@ -23,8 +23,8 @@ public class Part4Test {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        driverForTest = new ChromeDriver();
-        driverForCreateUser = new ChromeDriver();
+        driverForTest = new ChromeDriver(options);
+        driverForCreateUser = new ChromeDriver(options);
         faker = new Faker();
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
