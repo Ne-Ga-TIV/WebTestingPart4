@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -17,7 +18,8 @@ public class Part4Test {
 
     @BeforeClass
     public void setUp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+
+        WebDriverManager.chromedriver().setup();
         driverForTest = new ChromeDriver();
         driverForCreateUser = new ChromeDriver();
         faker = new Faker();
