@@ -17,7 +17,7 @@ public class Part4Test {
 
     @BeforeClass
     public void setUp() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/home/ngtv/Downloads/chromedriver-linux64/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
         driverForTest = new ChromeDriver();
         driverForCreateUser = new ChromeDriver();
         faker = new Faker();
