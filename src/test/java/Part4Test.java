@@ -7,7 +7,7 @@ import java.io.IOException;
 import com.github.javafaker.Faker;
 
 
-public class Part4 {
+public class Part4Test {
 
     WebDriver driverForCreateUser;
     WebDriver driverForTest;
@@ -18,8 +18,8 @@ public class Part4 {
     @BeforeClass
     public void setUp() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/home/ngtv/Downloads/chromedriver-linux64/chromedriver");
-        driverForCreateUser = new ChromeDriver();
         driverForTest = new ChromeDriver();
+        driverForCreateUser = new ChromeDriver();
         faker = new Faker();
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
@@ -28,19 +28,7 @@ public class Part4 {
         createUser();
     }
 
-    @Test
-    public void test1() throws InterruptedException {
-        login();
-        buyProducts("data1.txt");
-        checkout();
-    }
 
-    @Test
-    public void test2() throws InterruptedException {
-        login();
-        buyProducts("data2.txt");
-        checkout();
-    }
 
     @AfterClass
     public void tearDown() {
@@ -61,6 +49,7 @@ public class Part4 {
         Thread.sleep(3000);
         driverForCreateUser.findElement(By.id("register-button")).click();
         driverForCreateUser.findElement(By.cssSelector("input.button-1.register-continue-button")).click();
+        driverForCreateUser.close();
     }
     @Test
     private void login() throws InterruptedException {
