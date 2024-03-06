@@ -1,6 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,6 +21,8 @@ public class Part4Test {
     public void setUp() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         driverForTest = new ChromeDriver();
         driverForCreateUser = new ChromeDriver();
         faker = new Faker();
