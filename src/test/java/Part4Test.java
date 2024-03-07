@@ -22,8 +22,7 @@ public class Part4Test {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
+        options.addArguments("user-data-dir=selenium");
         driverForTest = new ChromeDriver(options);
         driverForCreateUser = new ChromeDriver(options);
         faker = new Faker();
