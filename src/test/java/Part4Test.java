@@ -37,16 +37,9 @@ public class Part4Test {
         createUser();
     }
 
-
-
-
-
-
     @Test
     public void test1() throws InterruptedException {
         driverForTest = new ChromeDriver();
-
-
         login();
         buyProducts("data1.txt");
         checkout();
