@@ -22,7 +22,7 @@ public class Part4Test {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("user-data-dir=selenium");
+        options.addArguments("--remote-allow-origins=*");
         driverForTest = new ChromeDriver(options);
         driverForCreateUser = new ChromeDriver(options);
         faker = new Faker();
