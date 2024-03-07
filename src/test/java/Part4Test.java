@@ -21,10 +21,8 @@ public class Part4Test {
     public void setUp() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        driverForTest = new ChromeDriver(options);
-        driverForCreateUser = new ChromeDriver(options);
+        driverForTest = new ChromeDriver();
+        driverForCreateUser = new ChromeDriver();
         faker = new Faker();
         firstName = faker.name().firstName();
         lastName = faker.name().lastName();
