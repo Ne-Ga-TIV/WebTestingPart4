@@ -22,7 +22,8 @@ public class Part4Test {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
         driverForTest = new ChromeDriver(options);
         driverForCreateUser = new ChromeDriver(options);
         faker = new Faker();
